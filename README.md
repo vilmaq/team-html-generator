@@ -13,3 +13,5 @@ Add the following in the package.json
 "start": "node src/index.js",
 "test": "jest --verbose --coverage",
 "test:watch": "jest --verbose --watch",
+
+snapshot - will take the snapshot of what the function has return and wil compare it
