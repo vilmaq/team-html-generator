@@ -1,17 +1,40 @@
-# Team html Generator code
+# Team-HTML-Generator
 
-### Steps
+## Description
 
-create gitignore
-npm init -y to get the package.json
+This is a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that renders card for each added employee.
+Technologies used: JS, Node JS, HTML, CSS
+
+## Steps to Get started
+
+```
+git clone git@github.com:vilmaq/team-html-generator.git
+cd team-html-generator
+npm init -y
 npm i inquirer
-npm i jest --save-dev - install jest as a dev dependency
-src directory
+npm i jest --save-dev
 
-Add the following in the package.json
+```
+
+Add the following in the package.json for an easy start and testing of the application:
+
+```
 "scripts": {},
 "start": "node src/index.js",
 "test": "jest --verbose --coverage",
 "test:watch": "jest --verbose --watch",
+```
 
-snapshot - will take the snapshot of what the function has return and wil compare it
+To run the application:
+
+```
+npm run start
+
+```
+
+To test the application:
+
+```
+npm run test
+npm run test:watch
+```

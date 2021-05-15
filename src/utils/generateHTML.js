@@ -1,5 +1,66 @@
-const generateHTML = (answers) => {
-  console.log(answers);
+const Manager = require("../lib/manager");
+const Engineer = require("../lib/engineer");
+const Intern = require("../lib/intern");
+
+const generateManagerCard = (employee) => {
+  return `  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-header bg-success text-white">Manager</div>
+      <div class="card-body">
+        <h5 class="card-title">Name:${answers.name}</h5>
+        <p class="card-text">ID: ${answers.id}</p>
+        <p class="card-text">Email: ${answers.email}</p>
+        <p class="card-text">Office Number: ${answers.officeNumber}</p>
+      </div>
+    </div>
+  </div>`;
+};
+
+const generateEngineerCard = (employee) => {
+  return `      <div class="col">
+  <div class="card">
+    <div class="card-header bg-secondary text-white">Engineer</div>
+    <div class="card-body">
+      <h5 class="card-title">Name:${answers.name}</h5>
+      <p class="card-text">ID: ${answers.id}</p>
+      <p class="card-text">Email: ${answers.email}</p>
+      <p class="card-text">Github: ${answers.githubUsername}</p>
+    </div>
+  </div>
+</div>`;
+};
+
+const generateInternCard = (employee) => {
+  return `      <div class="col">
+  <div class="card">
+    <div class="card-header text-white bg-warning">Intern</div>
+    <div class="card-body">
+      <h5 class="card-title">Name:${answers.name}</h5>
+      <p class="card-text">ID: ${answers.id}</p>
+      <p class="card-text">Email: ${answers.email}</p>
+      <p class="card-text">School: ${answers.school}</p>
+    </div>
+  </div>
+</div>
+  </div>`;
+};
+
+const generateHTML = (employee) => {
+  const generateCard = (employee) => {
+    if (employee instanceof Manager) {
+      return generateManagerCard(employee);
+    }
+    if (employee instanceof Engineer) {
+      return generateEngineerCard(employee);
+    }
+    if (employee instanceof Intern) {
+      return generateInternCard(employee);
+    }
+  };
+
+  //Generates card for each employee
+  const cards = employee.map(generateCard);
 
   return `<!DOCTYPE html>
   <html lang="en">
@@ -21,9 +82,12 @@ const generateHTML = (answers) => {
         <header class="text-center p-4 bg-info text-white">
           <h1>${answers.teamName}</h1>
         </header>
+        <div class="d-flex justify-content-around flex-wrap">
+        ${cards.join("")}
       </div>
-    </body>
-  </html>
+    </div>
+  </body>
+</html>
   `;
 };
 
