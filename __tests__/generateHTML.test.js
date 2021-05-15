@@ -1,4 +1,4 @@
-const generateHTML = require("./generateHTML");
+const generateHTML = require("../src/utils/generateHTML");
 
 describe("generateHTML", () => {
   test("Should return the expected HTML markup", () => {

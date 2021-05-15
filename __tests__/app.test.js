@@ -1,12 +1,13 @@
 const inquirer = require("inquirer");
 
-const app = require("./app");
+const app = require("../src/app");
 
-const generateHTML = require("./generateHTML");
-const writeToFile = require("./writeToFile");
+const generateHTML = require("../src/utils/generateHTML");
+const writeToFile = require("../src/utils/writeToFile");
 
 jest.mock("inquirer");
-jest.mock("./generateHTML");
+jest.mock("../src/utils/generateHTML");
+jest.mock("../src/utils/writeToFile");
 
 describe("app", () => {
   const inquirerSpy = jest.spyOn(inquirer, "prompt");
@@ -57,7 +58,8 @@ describe("app", () => {
     await app();
     expect(generateHTML).toHaveBeenCalledWith(mockData);
   });
-  test("should call writeToFile with the html generator", async () => {
+
+  test("should call writeToFile with the html", async () => {
     const mockData = {
       teamName: "Foo Bar",
     };

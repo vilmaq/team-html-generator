@@ -1,7 +1,8 @@
-const inquirer = require("inquirer");
-const generateHTML = require("./generateHTML");
-const writeToFile = require("./writeToFile");
-// const getAnswers = require("./getAnswers");
+const getAnswers = require("./utils/getAnswers");
+const generateHTML = require("./utils/generateHTML");
+const writeToFile = require("./utils/writeToFile");
+const team = require("./utils/team");
+const createManager = require("./utils/createManager");
 
 const app = async () => {
   console.log("App Started");
@@ -14,7 +15,12 @@ const app = async () => {
     },
   ];
 
-  const answers = await inquirer.prompt(questions);
+  const answers = await getAnswers(questions);
+
+  const manager = await createManager();
+
+  const teamMembers = await team();
+
   const html = generateHTML(answers);
 
   writeToFile(html);
