@@ -10,7 +10,7 @@ const generateManagerCard = (employee) => {
       <div class="card-body">
         <h5 class="card-title">Name:${employee.name}</h5>
         <p class="card-text">ID: ${employee.id}</p>
-        <p class="card-text">Email: ${employee.email}</p>
+        <p class="card-text"><a  href="mailto: ${manager.email}"> ${manager.email} </a></p>
         <p class="card-text">Office Number: ${employee.officeNumber}</p>
       </div>
     </div>
@@ -25,8 +25,9 @@ const generateEngineerCard = (employee) => {
     <div class="card-body">
       <h5 class="card-title">Name:${employee.name}</h5>
       <p class="card-text">ID: ${employee.id}</p>
-      <p class="card-text">Email: ${employee.email}</p>
-      <p class="card-text">Github: ${employee.githubUsername}</p>
+      <p class="card-text"><a  href="mailto: ${manager.email}"> ${manager.email} </a></p>
+      <p class="card-text"> <a href="https://www.github.com/${employee.githubUsername}" target="_blank"
+      >${employee.githubUsername}</a></p>
     </div>
   </div>
 </div>`;
@@ -39,7 +40,7 @@ const generateInternCard = (employee) => {
     <div class="card-body">
       <h5 class="card-title">Name:${employee.name}</h5>
       <p class="card-text">ID: ${employee.id}</p>
-      <p class="card-text">Email: ${employee.email}</p>
+      <p class="card-text"><a  href="mailto: ${manager.email}"> ${manager.email} </a></p>
       <p class="card-text">School: ${employee.school}</p>
     </div>
   </div>
