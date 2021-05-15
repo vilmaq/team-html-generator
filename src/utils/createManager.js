@@ -4,20 +4,20 @@ const Manager = require("../lib/Engineer");
 const createManager = async () => {
   const managerQuestions = [
     {
-      message: "Please enter the new Manager's full name:",
+      message: "Please enter Manager's full name:",
       name: "name",
     },
     {
-      message: "Please enter the new Managers's ID",
-      name: "employeeID",
+      message: "Please enter Manager's ID",
+      name: "id",
     },
     {
-      message: "Please enter the new Engineer's email",
+      message: "Please enter Manager's email",
       name: "email",
     },
     {
-      message: "Please enter the new Engineer's GitHub username ",
-      name: "githubUsername",
+      message: "Please enter Manager's Office Number ",
+      name: "officeNumber",
     },
   ];
 

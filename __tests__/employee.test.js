@@ -19,7 +19,6 @@ describe("Employee class", () => {
         mockAnswers.id,
         mockAnswers.email
       );
-      console.log(actual);
 
       expect(actual["name"]).toEqual("test");
       expect(actual["id"]).toEqual("123");

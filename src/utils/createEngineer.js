@@ -9,7 +9,7 @@ const createEngineer = async () => {
     },
     {
       message: "Please enter the new Engineer's ID",
-      name: "employeeID",
+      name: "id",
     },
     {
       message: "Please enter the new Engineer's email",

@@ -9,7 +9,7 @@ const createIntern = async () => {
     },
     {
       message: "Please enter the new Intern's ID",
-      name: "employeeID",
+      name: "id",
     },
     {
       message: "Please enter the new Intern's email",
