@@ -21,9 +21,11 @@ const createEngineer = async () => {
     },
   ];
 
-  const engineerAnswers = await getAnswers(engineerQuestions);
+  const { name, id, email, githubUsername } = await getAnswers(
+    engineerQuestions
+  );
 
-  return new Engineer(engineerAnswers);
+  return new Engineer(name, id, email, githubUsername);
 };
 
 module.exports = createEngineer;

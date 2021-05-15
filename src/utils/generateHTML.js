@@ -8,24 +8,25 @@ const generateManagerCard = (employee) => {
     <div class="card">
       <div class="card-header bg-success text-white">Manager</div>
       <div class="card-body">
-        <h5 class="card-title">Name:${answers.name}</h5>
-        <p class="card-text">ID: ${answers.id}</p>
-        <p class="card-text">Email: ${answers.email}</p>
-        <p class="card-text">Office Number: ${answers.officeNumber}</p>
+        <h5 class="card-title">Name:${employee.name}</h5>
+        <p class="card-text">ID: ${employee.id}</p>
+        <p class="card-text">Email: ${employee.email}</p>
+        <p class="card-text">Office Number: ${employee.officeNumber}</p>
       </div>
     </div>
   </div>`;
 };
 
 const generateEngineerCard = (employee) => {
+  console.log(employee);
   return `      <div class="col">
   <div class="card">
     <div class="card-header bg-secondary text-white">Engineer</div>
     <div class="card-body">
-      <h5 class="card-title">Name:${answers.name}</h5>
-      <p class="card-text">ID: ${answers.id}</p>
-      <p class="card-text">Email: ${answers.email}</p>
-      <p class="card-text">Github: ${answers.githubUsername}</p>
+      <h5 class="card-title">Name:${employee.name}</h5>
+      <p class="card-text">ID: ${employee.id}</p>
+      <p class="card-text">Email: ${employee.email}</p>
+      <p class="card-text">Github: ${employee.githubUsername}</p>
     </div>
   </div>
 </div>`;
@@ -36,32 +37,29 @@ const generateInternCard = (employee) => {
   <div class="card">
     <div class="card-header text-white bg-warning">Intern</div>
     <div class="card-body">
-      <h5 class="card-title">Name:${answers.name}</h5>
-      <p class="card-text">ID: ${answers.id}</p>
-      <p class="card-text">Email: ${answers.email}</p>
-      <p class="card-text">School: ${answers.school}</p>
+      <h5 class="card-title">Name:${employee.name}</h5>
+      <p class="card-text">ID: ${employee.id}</p>
+      <p class="card-text">Email: ${employee.email}</p>
+      <p class="card-text">School: ${employee.school}</p>
     </div>
   </div>
 </div>
   </div>`;
 };
 
-const generateHTML = (employee) => {
+const generateHTML = (teamMembers, manager, answers) => {
+  const managerCard = generateManagerCard(manager);
   const generateCard = (employee) => {
-    if (employee instanceof Manager) {
-      return generateManagerCard(employee);
-    }
-    if (employee instanceof Engineer) {
+    if (employee.getRole() === "Engineer") {
       return generateEngineerCard(employee);
     }
-    if (employee instanceof Intern) {
+    if (employee.getRole() === "Intern") {
       return generateInternCard(employee);
     }
   };
 
-  //Generates card for each employee
-  const cards = employee.map(generateCard);
-
+  const cards = teamMembers.map(generateCard);
+  console.log(cards);
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -79,10 +77,12 @@ const generateHTML = (employee) => {
     </head>
     <body>
       <div
-        <header class="text-center p-4 bg-info text-white">
+        <header text-white class="text-center p-4 bg-info ">
           <h1>${answers.teamName}</h1>
         </header>
-        <div class="d-flex justify-content-around flex-wrap">
+        </div>
+        <div class="row d-flex justify-content-between flex-wrap">
+        ${managerCard}
         ${cards.join("")}
       </div>
     </div>

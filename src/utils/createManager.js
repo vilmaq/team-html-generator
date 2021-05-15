@@ -21,9 +21,9 @@ const createManager = async () => {
     },
   ];
 
-  const managerAnswers = await getAnswers(managerQuestions);
+  const { name, id, email, officeNumber } = await getAnswers(managerQuestions);
 
-  return new Manager(managerAnswers);
+  return new Manager(name, id, email, officeNumber);
 };
 
 module.exports = createManager;

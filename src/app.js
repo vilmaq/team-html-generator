@@ -21,7 +21,7 @@ const app = async () => {
 
   const teamMembers = await team();
 
-  const html = generateHTML(answers);
+  const html = generateHTML(teamMembers, manager, answers);
 
   writeToFile(html);
 };

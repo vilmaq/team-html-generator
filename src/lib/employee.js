@@ -1,3 +1,4 @@
+// parent class Employee
 class Employee {
   constructor(name, id, email) {
     this.name = name;
@@ -9,7 +10,7 @@ class Employee {
     return this.name;
   }
 
-  getEmployeeID() {
+  getId() {
     return this.id;
   }
 

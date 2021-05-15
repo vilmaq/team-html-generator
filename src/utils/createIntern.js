@@ -21,9 +21,9 @@ const createIntern = async () => {
     },
   ];
 
-  const internAnswers = await getAnswers(internQuestions);
+  const { name, id, email, school } = await getAnswers(internQuestions);
 
-  return new Intern(internAnswers);
+  return new Intern(name, id, email, school);
 };
 
 module.exports = createIntern;
