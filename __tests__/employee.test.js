@@ -13,7 +13,7 @@ describe("Employee class", () => {
       expect(actual).toBeInstanceOf(Employee);
     });
 
-    it("should set the values", () => {
+    it("set the mockAnswers", () => {
       const actual = new Employee(
         mockAnswers.name,
         mockAnswers.id,
@@ -27,31 +27,30 @@ describe("Employee class", () => {
   });
 
   describe("Method tests", () => {
-    it("should get employee's name", () => {
+    it("should return employee's name", () => {
       const employee = new Employee(mockAnswers);
       const actual = employee.getName();
 
       expect(actual).toEqual(employee.name);
     });
 
-    it("should get employee's ID", () => {
+    it("should return employee's Id", () => {
       const employee = new Employee(mockAnswers);
-      const actual = employee.getEmployeeID();
+      const actual = employee.getId();
 
       expect(actual).toEqual(employee.id);
     });
 
-    it("should get the employee's email", () => {
+    it("should return the employee's email", () => {
       const employee = new Employee(mockAnswers);
       const actual = employee.getEmail();
 
       expect(actual).toEqual(employee.email);
     });
 
-    it("should get the employee's role", () => {
+    it("should return the employee's role", () => {
       const employee = new Employee(mockAnswers);
       const actual = employee.getRole();
-
       expect(actual).toEqual("Employee");
     });
   });

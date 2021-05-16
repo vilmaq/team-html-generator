@@ -10,7 +10,7 @@ const generateManagerCard = (employee) => {
       <div class="card-body">
         <h5 class="card-title">Name:${employee.name}</h5>
         <p class="card-text">ID: ${employee.id}</p>
-        <p class="card-text"><a  href="mailto: ${manager.email}"> ${manager.email} </a></p>
+        <p class="card-text"><a  href="mailto: ${employee.email}"> ${employee.email} </a></p>
         <p class="card-text">Office Number: ${employee.officeNumber}</p>
       </div>
     </div>
@@ -18,16 +18,15 @@ const generateManagerCard = (employee) => {
 };
 
 const generateEngineerCard = (employee) => {
-  console.log(employee);
   return `      <div class="col">
   <div class="card">
     <div class="card-header bg-secondary text-white">Engineer</div>
     <div class="card-body">
       <h5 class="card-title">Name:${employee.name}</h5>
       <p class="card-text">ID: ${employee.id}</p>
-      <p class="card-text"><a  href="mailto: ${manager.email}"> ${manager.email} </a></p>
-      <p class="card-text"> <a href="https://www.github.com/${employee.githubUsername}" target="_blank"
-      >${employee.githubUsername}</a></p>
+      <p class="card-text"><a  href="mailto: ${employee.email}"> ${employee.email} </a></p>
+      <p class="card-text"> <a href="https://www.github.com/${employee.github}" target="_blank"
+      >${employee.github}</a></p>
     </div>
   </div>
 </div>`;
@@ -40,7 +39,7 @@ const generateInternCard = (employee) => {
     <div class="card-body">
       <h5 class="card-title">Name:${employee.name}</h5>
       <p class="card-text">ID: ${employee.id}</p>
-      <p class="card-text"><a  href="mailto: ${manager.email}"> ${manager.email} </a></p>
+      <p class="card-text"><a  href="mailto: ${employee.email}"> ${employee.email} </a></p>
       <p class="card-text">School: ${employee.school}</p>
     </div>
   </div>
@@ -50,6 +49,7 @@ const generateInternCard = (employee) => {
 
 const generateHTML = (teamMembers, manager, answers) => {
   const managerCard = generateManagerCard(manager);
+
   const generateCard = (employee) => {
     if (employee.getRole() === "Engineer") {
       return generateEngineerCard(employee);
@@ -60,7 +60,7 @@ const generateHTML = (teamMembers, manager, answers) => {
   };
 
   const cards = teamMembers.map(generateCard);
-  console.log(cards);
+  console.log("employees.html generated inside dist directory");
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
