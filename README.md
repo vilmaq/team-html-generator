@@ -104,5 +104,9 @@ index.js		// runs the application
 
 ## GitHub & Walkthrough Video
 
-- ![GitHub Repository](https://github.com/vilmaq/team-html-generator)
-- ![Walkthrough Video]()
+- [GitHub Repository](https://github.com/vilmaq/team-html-generator)
+- [Walkthrough Video]()
+
+## Sample of Generated HTML
+
+[sample.html](https://github.com/vilmaq/team-html-generator/blob/master/src/utils/sample.html)
