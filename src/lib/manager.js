@@ -5,7 +5,6 @@ class Manager extends Employee {
     super(rest);
 
     this.officeNumber = officeNumber;
-    console.log(officeNumber);
   }
 
   getOfficeNumber() {
