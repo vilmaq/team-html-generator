@@ -3,6 +3,7 @@ const Engineer = require("../lib/engineer");
 const Intern = require("../lib/intern");
 
 const generateManagerCard = (employee) => {
+  console.log(employee);
   return `  <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card">

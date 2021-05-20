@@ -18,6 +18,7 @@ const app = async () => {
   const answers = await getAnswers(questions);
 
   const manager = await createManager();
+  console.log(manager, "xx");
 
   const teamMembers = await team();
 
